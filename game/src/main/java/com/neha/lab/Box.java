@@ -3,10 +3,10 @@ package com.neha.lab;
 import java.awt.Color;
 
 public class Box {
-    private int x;
-    private int y;
-    private int size;
-    private int index;
+    private int x; // x-coordinate of the left upper corner of the box
+    private int y; // y-coordinate of the left upper corner of the box
+    private int size; // size of side of square box
+    private int index; // index of the box
 
     public int getX() {
         return x;
