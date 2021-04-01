@@ -35,7 +35,7 @@ public class Player {
     // roll dice and change the position of player accordingly
     public boolean rollDice(int randomNumber) {
 
-        if (!this.isActive && randomNumber == 1) {
+        if (!this.isActive && randomNumber == 2) {
             this.isActive = true;
         }
         if (!this.isActive) return false;
