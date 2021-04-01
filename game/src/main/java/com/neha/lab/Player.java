@@ -6,7 +6,7 @@ public class Player {
     private int playerNumber; // player's number
     private boolean isActive; // is player active
 
-    Player(int playerNumber) {
+    public Player(int playerNumber) {
         this.currentBox = SnakesAndLaddersBoard.boxArray[0];
         this.playerNumber = playerNumber;
         this.isActive = false;
@@ -14,6 +14,14 @@ public class Player {
 
     public void setCurrentBox(Box currentBox) {
         this.currentBox = currentBox;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public Box getCurrentBox() {
@@ -25,8 +33,8 @@ public class Player {
     }
 
     // roll dice and change the position of player accordingly
-    public boolean rollDice() {
-        int randomNumber = Utility.getRandomInteger(6, 1);
+    public boolean rollDice(int randomNumber) {
+
         if (!this.isActive && randomNumber == 1) {
             this.isActive = true;
         }

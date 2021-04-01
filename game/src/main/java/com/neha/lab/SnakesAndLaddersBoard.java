@@ -26,8 +26,13 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
     public static Box[] boxArray; // array of boxes having all information
 
     private BufferedImage ladderImage = null;
+    public static Button rollDiceButton = null;
 
     private Player player1 = null;
+
+    public Player getPlayer1() {
+        return player1;
+    }
 
     public SnakesAndLaddersBoard() {
         super("Snakes and Ladders");
@@ -69,7 +74,7 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
 
     private void prepareGUI(){
         setSize(Constants.CANVAS_WIDTH + 100, Constants.CANVAS_HEIGHT + 100); // 100 is buffer height and width
-        Button rollDiceButton = new Button("Roll Dice...");
+        rollDiceButton = new Button("Roll Dice...");
         rollDiceButton.addActionListener(this::actionPerformed);
         setLayout(new BorderLayout());
         add(rollDiceButton, BorderLayout.EAST);
@@ -193,7 +198,8 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        boolean won = this.player1.rollDice(); // call rollDice for particular player
+        int randomNumber = Utility.getRandomInteger(6, 1);
+        boolean won = this.player1.rollDice(randomNumber); // call rollDice for particular player
 
         repaint(); // repaint the board
 

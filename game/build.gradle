@@ -1,6 +1,15 @@
 plugins {
-    id 'java'
+    id "application"
 }
+apply plugin : "java"
+ext {
+    javaMainClass = "com.neha.lab.SnakesAndLaddersBoard"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
 
 group 'com.neha.lab'
 version '1.0-SNAPSHOT'
