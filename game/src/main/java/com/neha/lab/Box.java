@@ -7,7 +7,9 @@ public class Box {
     private int y; // y-coordinate of the left upper corner of the box
     private int size; // size of side of square box
     private int index; // index of the box
-
+    private Integer transitionIndex; // index to which player will transit to when snake/ladder present, otherwise null when no snake or ladder from box
+    private Color color; // color of the box
+    
     public int getX() {
         return x;
     }
@@ -28,8 +30,13 @@ public class Box {
         return color;
     }
 
-    private Color color;
+    public Integer getTransitionIndex() {
+        return transitionIndex;
+    }
 
+    public void setTransitionIndex(Integer transitionIndex) {
+        this.transitionIndex = transitionIndex;
+    }
 
     public Box(int x, int y, int size, int index) {
         this.x = x;
@@ -47,4 +54,6 @@ public class Box {
             this.color = Color.YELLOW;
         }
     }
+
+
 }
