@@ -122,6 +122,9 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
         int halvedSize = sizeOfEachBox / 2;
         g.drawLine(fromBox.getX() + halvedSize, fromBox.getY() + halvedSize,
                 toBox.getX() + halvedSize, toBox.getY() + halvedSize);
+
+        // set transition for drawn snake
+        fromBox.setTransitionIndex(toBox);
     }
 
     // generic method for drawing ladder on board
@@ -183,6 +186,9 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
             g.drawImage(outputImage, fromBox.getX() + halvedSize - imageWidth,
                     fromBox.getY() + halvedSize, this);
         }
+
+        // set transition for drawn ladder
+        toBox.setTransitionIndex(fromBox);
    }
 
     @Override
@@ -194,6 +200,13 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
         if (won) { // when player reaches to last box, show message
             JOptionPane.showMessageDialog(null, "Player 1 won.");
             System.exit(0);
+        }
+
+        Box currentBox = this.player1.getCurrentBox();
+        if (currentBox.getTransitionIndex() != null) {
+            this.player1.setCurrentBox(currentBox.getTransitionIndex());
+            Utility.setTimeout(() -> {}, 8000);
+            repaint();
         }
     }
 

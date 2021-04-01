@@ -12,6 +12,10 @@ public class Player {
         this.isActive = false;
     }
 
+    public void setCurrentBox(Box currentBox) {
+        this.currentBox = currentBox;
+    }
+
     public Box getCurrentBox() {
         return currentBox;
     }
@@ -22,7 +26,7 @@ public class Player {
 
     // roll dice and change the position of player accordingly
     public boolean rollDice() {
-        int randomNumber = getRandomInteger(6, 1);
+        int randomNumber = Utility.getRandomInteger(6, 1);
         if (!this.isActive && randomNumber == 1) {
             this.isActive = true;
         }
@@ -34,10 +38,5 @@ public class Player {
             this.currentBox = SnakesAndLaddersBoard.boxArray[SnakesAndLaddersBoard.totalNumberOfBoxes - 1];
             return true;
         }
-    }
-
-    // generate a random number
-    private static int getRandomInteger(int maximum, int minimum){
-        return ((int) (Math.random()*(maximum - minimum))) + minimum;
     }
 }
