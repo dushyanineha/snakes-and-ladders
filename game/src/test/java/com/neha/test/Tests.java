@@ -35,9 +35,9 @@ class Tests {
         assertEquals(0, snakesAndLaddersBoard.getPlayer1().getCurrentBox().getIndex());
         rollDice(6);
         assertEquals(0, snakesAndLaddersBoard.getPlayer1().getCurrentBox().getIndex());
-        rollDice(1);
-        assertEquals(1, snakesAndLaddersBoard.getPlayer1().getCurrentBox().getIndex());
-        rollDice(5);
+        rollDice(2);
+        assertEquals(2, snakesAndLaddersBoard.getPlayer1().getCurrentBox().getIndex());
+        rollDice(4);
         assertEquals(13, snakesAndLaddersBoard.getPlayer1().getCurrentBox().getIndex());
     }
 
