@@ -9,17 +9,4 @@ public class Utility {
     public static int getRandomEvenInteger(int maximum, int minimum){
         return (((int) (Math.random()*(maximum - minimum))) + minimum) * 2;
     }
-
-    // method to sleep thread
-    public static void setTimeout(Runnable runnable, int delay){
-        new Thread(() -> {
-            try {
-                Thread.sleep(delay);
-                runnable.run();
-            }
-            catch (Exception e){
-                System.err.println(e);
-            }
-        }).start();
-    }
 }

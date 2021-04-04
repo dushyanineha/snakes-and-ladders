@@ -1,7 +1,7 @@
 package com.neha.lab;
 
 import javax.imageio.ImageIO;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Font;
@@ -17,6 +17,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
 // this class is for designing the snakes and ladders board
@@ -208,11 +209,23 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
             System.exit(0);
         }
 
-        Box currentBox = this.player1.getCurrentBox();
+        Box currentBox = player1.getCurrentBox();
         if (currentBox.getTransitionIndex() != null) {
-            this.player1.setCurrentBox(currentBox.getTransitionIndex());
-            Utility.setTimeout(() -> {}, 8000);
-            repaint();
+            rollDiceButton.setEnabled(false);
+            Timer timer = new Timer(2000, new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    final long time = System.currentTimeMillis();
+                    SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
+                            player1.setCurrentBox(currentBox.getTransitionIndex());
+                            repaint(); // repaint the board
+                            rollDiceButton.setEnabled(true);
+                        }
+                    });
+                }
+            });
+            timer.setRepeats(false);
+            timer.start();
         }
     }
 
