@@ -1,7 +1,9 @@
 package com.neha.lab;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Font;
