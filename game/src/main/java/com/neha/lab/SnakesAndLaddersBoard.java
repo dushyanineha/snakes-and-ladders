@@ -201,7 +201,7 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int randomNumber = Utility.getRandomEvenInteger(3, 1);
+        int randomNumber = Utility.getRandomEvenInteger(6, 1);
         boolean won = this.player1.rollDice(randomNumber); // call rollDice for particular player
 
         repaint(); // repaint the board

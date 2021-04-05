@@ -3,7 +3,7 @@ package com.neha.lab;
 public class Player {
 
     private Box currentBox; // player's current position
-    private int playerNumber; // player's number
+    private final int playerNumber; // player's number
     private boolean isActive; // is player active
 
     public Player(int playerNumber) {
@@ -14,14 +14,6 @@ public class Player {
 
     public void setCurrentBox(Box currentBox) {
         this.currentBox = currentBox;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
     }
 
     public Box getCurrentBox() {

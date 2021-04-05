@@ -15,6 +15,7 @@ public class Constants {
     public static final Color NUMBERS_TEXT_COLOR = Color.BLACK; // color of the numbers text
 
     public static final String LADDER_IMAGE_PATH = "./src/main/resources/ladder.png"; // relative path of ladder image file
-    public static final String SNAKE_IMAGE_PATH = "./src/main/resources/snake.png"; // relative path of snake image file
+
+    // public static final String SNAKE_IMAGE_PATH = "./src/main/resources/snake.png"; // relative path of snake image file
 
 }

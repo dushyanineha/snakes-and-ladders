@@ -18,10 +18,6 @@ public class Box {
         return y;
     }
 
-    public int getSize() {
-        return size;
-    }
-
     public int getIndex() {
         return index;
     }

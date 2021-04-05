@@ -6,7 +6,8 @@ public class Utility {
         return ((int) (Math.random()*(maximum - minimum))) + minimum;
     }
 
+    // generate random even integer
     public static int getRandomEvenInteger(int maximum, int minimum){
-        return (((int) (Math.random()*(maximum - minimum))) + minimum) * 2;
+        return (((int) (Math.random()*(maximum/2 - minimum))) + minimum) * 2;
     }
 }
