@@ -215,12 +215,10 @@ public class SnakesAndLaddersBoard extends Frame implements ActionListener {
             rollDiceButton.setEnabled(false);
             Timer timer = new Timer(2000, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    SwingUtilities.invokeLater(new Runnable() {
-                        public void run() {
-                            player1.setCurrentBox(currentBox.getTransitionIndex());
-                            repaint(); // repaint the board
-                            rollDiceButton.setEnabled(true);
-                        }
+                    SwingUtilities.invokeLater( () -> {
+                        player1.setCurrentBox(currentBox.getTransitionIndex());
+                        repaint(); // repaint the board
+                        rollDiceButton.setEnabled(true);
                     });
                 }
             });
