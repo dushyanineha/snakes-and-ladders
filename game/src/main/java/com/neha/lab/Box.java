@@ -3,12 +3,12 @@ package com.neha.lab;
 import java.awt.Color;
 
 public class Box {
-    private int x; // x-coordinate of the left upper corner of the box
-    private int y; // y-coordinate of the left upper corner of the box
-    private int size; // size of side of square box
-    private int index; // index of the box
+    private final int x; // x-coordinate of the left upper corner of the box
+    private final int y; // y-coordinate of the left upper corner of the box
+    private final int size; // size of side of square box
+    private final int index; // index of the box
     private Box transitionIndex; // index to which player will transit to when snake/ladder present, otherwise null when no snake or ladder from box
-    private Color color; // color of the box
+    private final Color color; // color of the box
 
     public int getX() {
         return x;
